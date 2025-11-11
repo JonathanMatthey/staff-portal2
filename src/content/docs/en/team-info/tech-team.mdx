@@ -1,0 +1,183 @@
+---
+title: Tech team
+description: Information about the Interledger Foundation Technical Team
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+# Welcome onboard the pirate ship 🏴‍☠️
+
+This page is all about the Interledger tech team. If you have any suggestions (like adding a random dancing hamster gif which pops up at random) or objections (like rewording any or all of the nonsense on this page), please ping [Hui Jing](https://interledgerfoundation.slack.com/team/U059PUZ7TA9) on Slack.
+
+If you are not already in the [#tech-team](https://interledgerfoundation.slack.com/archives/C05EMHTG6FM) Slack channel, honestly, your manager didn't do this right, eh? You should also be in the [#tech-standups](https://interledgerfoundation.slack.com/archives/C039CE49W12) channel, where a daily Geekbot will harrass you to provide updates. The other channels are more specific to projects, and you're more than welcome to join them all!
+
+As for recurring meetings, our main one is the once-every-two-weeks [Tech Team Weekly](https://meet.google.com/vns-cfeb-xtt) (see [meeting notes](https://docs.google.com/document/d/1n-M-7GKEMip_S4E0ek83EYCxbK3m2ZPP91QYvrLFyK4/edit)) on Wednesdays at 2pm GMT+2 (please [convert to your own timezone](https://www.timeanddate.com/worldclock/meeting.html) accordingly). For the project meetings, those will be mentioned in their respective sections below.
+
+## Our most active codebases!
+
+If you're completely new to all of this, it's good to keep in mind that our work can be broadly grouped between **standards** (which describe how things ought to work) and **implementations** (which is the thing that's supposed to be working). Our team members are not fixed to specific projects or teams, but everyone generally at least one "pet" project at any point in time, so you can direct questions about a particular project to them.
+
+All our projects are running on something. Something being Netlify, or AWS, or Github Pages. [Tadej Golobic](https://interledgerfoundation.slack.com/team/U06M1HADG9M) is our Devops Engineer whom you should consult for deployment issues (especially AWS, that impossibly complicated and terrible UX experience that powers more than half of the world's software services).
+
+### Rafiki
+
+[Rafiki](https://github.com/interledger/rafiki) is our implementation of Interledger, meant for Account Servicing Entities (ASEs) to **enable Interledger functionality on their users' accounts**. Think of Rafiki like the router in your home or office which allows your device to connect to the internet. Rafiki allows the ASE to connect their system to the Interledger network.
+
+[Sabine Schaller](https://interledgerfoundation.slack.com/team/U03240NN7EZ) leads the Rafiki team. She's the person writing up the monthly [Rafiki updates](https://community.interledger.org/t/rafikiupdates) on our community forem (yes, that's not a spelling error). [Nathan Lie](https://interledgerfoundation.slack.com/team/U05HHTMN9UZ) AKA g'Nathan can answer all your questions about GNAP. If you're asking, what in the world is GNAP, that's a good reason to ping him on Slack.
+
+[Max Kurapov](https://interledgerfoundation.slack.com/team/U044PTD55B7), [Blair Currey](https://interledgerfoundation.slack.com/team/U054WDVT7FZ), [Jason Brewer](https://interledgerfoundation.slack.com/team/U05H66H9TQ8), [Oana Lolea](https://interledgerfoundation.slack.com/team/U07LJEW3NFM) and [Sarah Jones](https://interledgerfoundation.slack.com/team/U01JXS9GPEX) are also folks you can ask for questions around Rafiki. The [Rafiki Community Call](https://meet.google.com/sms-fwny-ezc) (see [meeting notes](https://github.com/interledger/rafiki/discussions)) happens every other Tuesday at 4.30pm GMT+2 (please [convert to your own timezone](https://www.timeanddate.com/worldclock/meeting.html) accordingly). Feel free to ask in the team channel to be added to the meeting.
+
+### Open Payments
+
+[Open Payments](https://github.com/interledger/open-payments) is an open API standard that is used in Rafiki and can be implemented by ASEs to **allow delegated access into user accounts**. It provides a level of unprecendented granularity for third parties who require access to specific permissions into user accounts without exposing data beyond what is granted.
+
+This is a terrible explanation. Please talk to [Max](https://interledgerfoundation.slack.com/team/U044PTD55B7), [Radu](https://interledgerfoundation.slack.com/team/U048W6E3MHB) or [Blair](https://interledgerfoundation.slack.com/team/U054WDVT7FZ) to get a better idea of what the Open Payments APIs are all about. The [Open Payments Catchup](https://meet.google.com/htd-eefo-ovn) (see [meeting notes](https://docs.google.com/document/d/1b3caT7lWAaTA-rZMI3YTDBgInGWVa7JtMuO17vG84kg/edit)) happens every other Wednesday at 2pm GMT+2 (please [convert to your own timezone](https://www.timeanddate.com/worldclock/meeting.html) accordingly). Feel free to ask in the team channel to be added to the meeting.
+
+### Interledger Pay
+
+[Interledger Pay](https://github.com/interledger/interledger-pay) is a **simplified payments platform**, where you can easily send or request money from anyone anywhere in the world, if you own a Wallet Address. You can use it to send test money with Interledger test wallet, or real money with a Fynbos account, if you have one. The key people who built and maintain this project are [Timea](https://interledgerfoundation.slack.com/team/U048Z4VU7MY) and [Radu](https://interledgerfoundation.slack.com/team/U048W6E3MHB).
+
+### Testnet
+
+[Testnet](https://github.com/interledger/testnet) is short for Interledger Test Network, which is our open Interledger network that works with test money. It is meant **for ASEs to test their Interledger integration** without the burden of dealing with the reality of various compliance and regulatory issues in their respective jurisdictions.
+
+Anybody who wants to integrate with the Interledger network can automatically peer with the Interledger test wallet and join the testnet. Our team maintains 2 of the assets on testnet, Interledger test wallet and Interledger test boutique.
+
+[Timea Nagy](https://interledgerfoundation.slack.com/team/U048Z4VU7MY) leads the Testnet team, which consists of a group of devs sometimes affectionately referred to as "The Breakpoint Boyz" (like a respectable boyband). Which is a good segway to talk about BreakPoint IT. Although on paper, they are considered contractors, in reality, everyone on the BreakPoint team is an integral part of the ILF tech team, our peoples through and through.
+
+Our respectable boyband consists of [Radu Popa](https://interledgerfoundation.slack.com/team/U048W6E3MHB) (father to the beautiful emoji-worthy cat, Misty), [Beniamin Munteanu](https://interledgerfoundation.slack.com/team/U04H66HHLGM) (AKA Beni), [Dragos Palade](https://interledgerfoundation.slack.com/team/U04DD23QVS9), [Arpad Lengyel (AKA Arpi)](https://interledgerfoundation.slack.com/team/U06S92YRF1S), [Bogdan Sandu](https://interledgerfoundation.slack.com/team/U070D1GQ6Q1) and [Adrian Boros (AKA Adi)](https://interledgerfoundation.slack.com/team/U07KUFTLQJW).
+
+### Web Monetization extension
+
+[Web Monetization](https://github.com/WICG/webmonetization) is one of the Interledger use-cases we are trying to develop in the real world. It is a standard that we are trying to get browsers to implement natively, but that process will take a long time. So for the time being, we are developing our [browser extension](https://github.com/interledger/web-monetization-extension), which will replicate future native browser behaviour, as well as provide an interface for folks to use web monetization to pay websites.
+
+Radu (yes, the same Radu who is a member of The Breakpoint Boyz, he's a busy man!) is leading the engineering effort for the extension, and together with [Sid Vishnoi](https://interledgerfoundation.slack.com/team/U0778QD9FJ5), they are trying to bring the extension to a state where the general public can send money to each others websites.
+
+The [Web Monetization Catchup](https://meet.google.com/fjy-vjef-ogj) (see [meeting notes](https://docs.google.com/document/d/1-xHBeZqPMhys1BPe8qH95yxrcWqGY2zbILUOPLU1OoA/edit)) happens every other Thursday at 3pm GMT+2 (please [convert to your own timezone](https://www.timeanddate.com/worldclock/meeting.html) accordingly). Feel free to ask in the team channel to be added to the meeting.
+
+### Web Monetization tools
+
+[Web Monetization tools](https://github.com/interledger/web-monetization-tools) is meant to support and promote the adoption of Web Monetization by providing tools that let folks generate and add banners, widgets, buttons or exclusive content to their own web-monetized sites. The widgets will also make use of Interledger Pay. If this piques your interest, reach out to [Arpi](https://interledgerfoundation.slack.com/team/U06S92YRF1S) to find out more.
+
+## Our peoples!
+
+Organised by active projects because the normal org chart already exists on [Pingboard](https://interledgerfoundation.pingboard.com/org_chart?filter_by=62882226) (oh my god, please use Pingboard more, I think we paid for it). Boss man gets his own section because he's boss man.
+
+### Boss man
+
+<div class="two-col">
+<div class="two-col__item">
+<figure>
+<video controls>
+  <source src="/videos/tech-team.mp4" type="video/mp4" />
+  Download the [MP4 video](/videos/tech-team.mp4).
+</video>
+<figcaption>Our CTO, Alex Lakatos, introducing the tech team</figcaption>
+</figure>
+</div>
+
+<div class="two-col__item">
+
+Our CTO is [Alex Lakatos](https://interledgerfoundation.slack.com/team/U027Q4DV03X), AKA boss man. He's the dude we sell around to the who's who of the banking world or put on stages to talk about our technology. He is also one of the payments experts we have on the team so he can probably answer most of your questions related to payments if you're not entirely familiar with the financial industry.
+
+Fun fact, the real boss of boss man is [Erika Keresztes](https://interledgerfoundation.slack.com/team/U051DTPKFA5), who essentially makes sure boss man gets his shit in order.
+
+</div>
+</div>
+
+Did you already watch the video on the Team Info page? If you haven't, you get an annoying reminder here to actually watch it. We're not auto-playing this video because that's just rude, but come on, just click play. We're sure we spent at least 15 minutes shooting the thing.
+
+### Project JoPACC
+
+Timea is also leading Project JoPACC. [JoPACC](https://www.jopacc.com/) is short for The Jordan Payments and Clearing Company. They are a domestic payment system operator and is owned by the Central Bank of Jordan and all 21 commercial banks in Jordan. Commercial banks and payment service providers connect to JoPACC's payment systems to offer financial services to end-users.
+
+Project JoPACC involves our team working together with the JoPACC dev team to integrate Open Payments into JoPACC's system. If you're curious about this project, reach out to [Timea](https://interledgerfoundation.slack.com/team/U048Z4VU7MY), [Beni](https://interledgerfoundation.slack.com/team/U04H66HHLGM) or [Dragos](https://interledgerfoundation.slack.com/team/U04DD23QVS9) with your questions.
+
+### Project PCH
+
+The People's Clearinghouse or [La Cámara de la Gente](https://lacamara.mx/) is a technological platform for the social setor in Mexico aiming to provide access to clients of community banks and savings co-ops to initiate digital transfers and receive remittances in their accounts at the lowest possible cost.
+
+Not sure if we have a lead per se, but the people who are actively involved are [Jason](https://interledgerfoundation.slack.com/team/U05H66H9TQ8), [Max](https://interledgerfoundation.slack.com/team/U044PTD55B7) and [Tšeli Thabane](https://interledgerfoundation.slack.com/team/U028E5G8BG9), our project manager.
+
+### Project Make Web Monetization Kinda Real
+
+As mentioned above, [Web Monetization](https://github.com/WICG/webmonetization) is a browser standard that we are developing. That's why the repository sits with the WICG instead of Interledger. If you are unfamiliar with [web standards](https://www.w3.org/standards/), they are technical specifications designed to maximize consensus, ensure quality, earn endorsement and adoption by W3C Members and the broader community.
+
+The process of getting from standard to real-world implementation in browsers often takes a long time, so Interledger is developing a web monetization extension that acts as a polyfill for the expected functionalities until the standard gets implemented in browsers, like [Chromium](https://issues.chromium.org/issues/40110471). We are working with [Alexander Surkov](https://interledgerfoundation.slack.com/team/U053Z05B6AE) from [Igalia](https://www.igalia.com/) on the browser implementation side of things.
+
+Otherwise, for extension-related questions, reach out to [Radu](https://interledgerfoundation.slack.com/team/U048W6E3MHB) or [Sid](https://interledgerfoundation.slack.com/team/U0778QD9FJ5).
+
+### Project Dev Advocacy
+
+We have recently started to build our Developer Advocacy team and strategy around better engagement and community building. [Ioana Chiorean](https://interledgerfoundation.slack.com/team/U070CCUQ83U) is leading this effort, with [Vineel Reddy](https://interledgerfoundation.slack.com/team/U035625NS2E) as our community manager. This is a rather broad project since all of us and the work we do more or less is related to developer engagement, from the open-source projects we manage, to the documentation we write to the events we show up at.
+
+### Project Documentation
+
+It doesn't matter how good your software is if nobody knows how it works or how to use it. Self-documenting code can only take you so far. We currently have documentation sites for 3 of our projects: [Rafiki](https://rafiki.dev/), [Open Payments](https://openpayments.dev/) and [Web Monetization](https://webmonetization.org/docs/). We will most likely be developing 2 more new documentation sites for Interledger and Testnet, maybe. [Payment pointers](https://paymentpointers.org/) is also ours.
+
+[Melissa Henderson](https://interledgerfoundation.slack.com/team/U05AL10KABY) leads the documentation team comprising of [Mohammed Islam](https://interledgerfoundation.slack.com/team/U02PV2CDPU3) and [Bradley Dow](https://interledgerfoundation.slack.com/team/U06V572CTV0). These fine folks do the difficult job of writing the words that make our technology make sense to other people.
+
+All our documentation sites run on [Starlight](https://starlight.astro.build/), a documentation framework powered by [Astro](https://astro.build/). These sites were maintained by [Hui Jing](https://interledgerfoundation.slack.com/team/U059PUZ7TA9), but these are now handed over to [Sarah](https://interledgerfoundation.slack.com/team/U01JXS9GPEX). If you have questions, feel free to ask either of them.
+
+### Project Selling Interledger So We Can Retire Well
+
+If you have a website and Google cannot find it, does your website really exist? Same concept. If the people who we are building interledger for are unable to find accurate information about who we are, what we do and most importantly, why we matter to them, then that would be detrimental to all our retirement plans.
+
+To be fair, the [interledger.org](https://interledger.org) is a small part of the larger grand plan for increasing awareness and adoption of Interledger via all the other things you just read about above. But a website is still a codebase, that needs words to be written on it. Compelling words! Right now, [Hui Jing](https://interledgerfoundation.slack.com/team/U059PUZ7TA9) has handed over the maintenance and development of interledger.org, which is running on [Drupal](https://www.drupal.org/), to [Sarah](https://interledgerfoundation.slack.com/team/U01JXS9GPEX). The process of extracting critical knowledge and ideas out of [boss man](https://interledgerfoundation.slack.com/team/U027Q4DV03X)'s brain and onto various digital pages will continue to be an on-going endeavour.
+
+### Project Telemetry
+
+We want to measure the growth of the Interledger Network to make sure we're on the right track to retiring well (see above). And we have to track the network in order to measure it. Information like how many packets are moving across the network and how much money is getting transfered, things like that. We measure both the Test network and our soon-to-be Live network (as soon as Fynbos and Gatehub fix their compliance problems), using [Grafana](https://grafana.com/) as our observability platform.
+
+[Beni](https://interledgerfoundation.slack.com/team/U04H66HHLGM), [Blair](https://interledgerfoundation.slack.com/team/U054WDVT7FZ) and [Sarah](https://interledgerfoundation.slack.com/team/U01JXS9GPEX) are the reason why we have dashboards with nice charts, so direct your telemetry-related questions to them.
+
+## Our friends outside ILF!
+
+<Aside type="caution">
+We're still gathering content for this section
+</Aside>
+
+There are a number of people who are not part of the ILF but we work very closely with. So if you hear these names being mentioned here and there, you know they are not just imaginary friends that ride unicorns across the rainbows.
+
+### Fynbos (pronounced "Fain (like rain)"-"Boss (like boss man)")
+
+[Fynbos](https://fynbos.app/) is a digital wallet that supports ILP natively (as succintly put by founder, Adrian Hope-Bailie). Fynbos had spun out from Coil to go through the ardous process of licensing and becoming a full-fledged digital wallet (for more on Coil, please see the history section below). Fynbos has implemented Interledger and once we get past the compliacne hurdle, they should be one of the first nodes on the Interledger Network. If you want to have a chat with them, you can find the Fynbos folks in the [#fynbos-ilf](https://interledgerfoundation.slack.com/archives/C02BLL70QMN) channel.
+
+### Gatehub
+
+[Gatehub](https://gatehub.net/) is a platform for the Internet of Value (which is what they say in their website's source code when you inspect it).
+
+### Chimoney
+
+[Chimoney](https://chimoney.io/) provides payments infrastructure and APIs to facilitate cross-border payouts.
+
+<style>{`
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .two-col__item figure {
+    margin: 0;
+  }
+
+  .two-col__item video {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .two-col__item figcaption {
+    margin-top: 0.5rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+    font-style: italic;
+  }
+`}</style>

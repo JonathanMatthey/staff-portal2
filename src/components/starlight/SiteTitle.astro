@@ -1,6 +1,5 @@
 ---
-import logo from '~/assets/astro-logo.svg?raw';
-import docs from '~/assets/docs.svg?raw';
+import logo from '~/assets/interledger-logo.svg?raw';
 
 const main = 'https://astro.build/';
 const self = '/' + (Astro.locals.starlightRoute.locale || 'en') + '/getting-started/';
@@ -8,7 +7,6 @@ const self = '/' + (Astro.locals.starlightRoute.locale || 'en') + '/getting-star
 
 <span class="site-title sl-flex">
 	<a class="astro-logo" href={main} set:html={logo} aria-label="Astro" />
-	<a class="docs-logo" href={self} set:html={docs} aria-label="Docs" />
 </span>
 
 <style>

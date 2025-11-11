@@ -46,9 +46,6 @@ export default defineConfig({
 				PageTitle: './src/components/starlight/PageTitle.astro',
 			},
 			routeMiddleware: './src/routeData.ts',
-			editLink: {
-				baseUrl: 'https://github.com/withastro/docs/edit/main',
-			},
 			defaultLocale: 'en',
 			locales: localesConfig,
 			sidebar,
