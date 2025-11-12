@@ -3,21 +3,15 @@ const defaultCategory = 'Learn';
 
 // Order is important here. Pages are tested to see if they *start* with one of
 // these paths and will return early when one matches. This means more specific
-// paths need to be earlier in the array, e.g. `reference/errors/` before `reference/`.
+// paths need to be earlier in the array.
 const categories = [
-	['guides/rss/', 'Recipes'],
-	['guides/backend/', 'Recipes'],
-	['guides/cms/', 'Recipes'],
-	['guides/deploy/', 'Recipes'],
-	['guides/media/', 'Recipes'],
+	['guides/backend/', 'Learn'],
+	['guides/cms/', 'Learn'],
+	['guides/deploy/', 'Learn'],
+	['guides/media/', 'Learn'],
 	['guides/integrations-guide/', 'Learn'],
-	['guides/migrate-to-astro/', 'Recipes'],
-	['guides/upgrade-to/', 'Upgrade Guides'],
-	['recipes/', 'Recipes'],
-	['reference/errors/', 'Error Reference'],
-	['reference/', 'Reference'],
-	['tutorial/', 'Tutorials'],
-	['tutorials/', 'Tutorials'],
+	['guides/migrate-to-astro/', 'Learn'],
+	['guides/upgrade-to/', 'Learn'],
 ] as const;
 
 /**

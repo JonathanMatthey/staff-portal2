@@ -8,10 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "format": "pnpm run format:code",
-    "format:ci": "pnpm run format:imports && pnpm run format:code",
-    "format:code": "prettier -w . --cache --plugin-search-dir=.",
-    "format:imports": "echo 'Skipped formatting imports'",
+    "format": "prettier -w . --cache --plugin-search-dir=.",
+    "format:ci": "prettier -w . --cache --plugin-search-dir=.",
     "lint:eslint": "eslint .",
     "netlify:build": "pnpm ${NETLIFY_BUILD_SCRIPT:-build}"
   },

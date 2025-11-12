@@ -4,9 +4,7 @@ import { getPageCategory } from './getPageCategory';
  * Map of category names to the parent page for the category.
  * Pages in these categories are not visible in the sidebar, so we highlight the parent instead.
  */
-const categoryParents: Partial<Record<ReturnType<typeof getPageCategory>, string>> = {
-	'Error Reference': 'reference/error-reference',
-};
+const categoryParents: Partial<Record<ReturnType<typeof getPageCategory>, string>> = {};
 
 /**
  * Test if `currentPage` is considered a sub-page of `parentSlug`.
