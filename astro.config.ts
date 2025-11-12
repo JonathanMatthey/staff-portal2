@@ -8,7 +8,6 @@ import { devServerFileWatcher } from './config/integrations/dev-server-file-watc
 import { sitemap } from './config/integrations/sitemap';
 import { starlightPluginLlmsTxt } from './config/plugins/llms-txt';
 import { starlightPluginSmokeTest } from './config/plugins/smoke-test';
-import { rehypeTasklistEnhancer } from './config/plugins/rehype-tasklist-enhancer';
 
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
@@ -75,11 +74,7 @@ export default defineConfig({
 			// @ts-expect-error — `remark-smartypants` type is not matching Astro's for some reason even though they both use unified's `Plugin` type
 			[remarkSmartypants, { dashes: false }],
 		],
-		rehypePlugins: [
-			rehypeSlug,
-			// Tweak GFM task list syntax
-			rehypeTasklistEnhancer(),
-		],
+		rehypePlugins: [rehypeSlug],
 	},
 	image: {
 		domains: ['avatars.githubusercontent.com'],
