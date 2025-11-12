@@ -4,7 +4,6 @@ import rehypeSlug from 'rehype-slug';
 import remarkSmartypants from 'remark-smartypants';
 import { sidebar } from './astro.sidebar';
 import { devServerFileWatcher } from './config/integrations/dev-server-file-watcher';
-import { sitemap } from './config/integrations/sitemap';
 
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
@@ -55,7 +54,6 @@ export default defineConfig({
 			disable404Route: true,
 			customCss: ['./src/styles/global.css'],
 		}),
-		sitemap(),
 	],
 	trailingSlash: 'always',
 	scopedStyleStrategy: 'where',
