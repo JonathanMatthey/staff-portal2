@@ -14,34 +14,14 @@ export const AstroDocsI18nSchema = z
 		// Installation Guide
 		'install.autoTab': z.string(),
 		'install.manualTab': z.string(),
-		// `<DeployGuidesNav>` vocabulary
-		'deploy.sectionTitle': z.string(),
-		'deploy.altSectionTitle': z.string(),
-		'deploy.ssrTag': z.string(),
-		'deploy.staticTag': z.string(),
-		// CMS Guides vocabulary
-		'cms.navTitle': z.string(),
-		// Media Guides vocabulary
-		'media.navTitle': z.string(),
-		// Migration Guides vocabulary
-		'migration.navTitle': z.string(),
 		// 404 Page
 		'404.title': z.string(),
 		'404.content': z.string(),
 		'404.linkText': z.string(),
-		// Integrations vocabulary
-		'integrations.changelog': z.string(),
-		'integrations.footerTitle': z.string(),
-		'integrations.renderers': z.string(),
-		'integrations.adapters': z.string(),
-		'integrations.others': z.string(),
-		'integrations.more': z.string(),
 		// Code snippet vocabulary
 		'expressiveCode.terminalWindowFallbackTitle': z.string(),
 		'expressiveCode.copyButtonTooltip': z.string(),
 		'expressiveCode.copyButtonCopied': z.string(),
-		// Backend Guides vocabulary
-		'backend.navTitle': z.string(),
 		// Starlight banner
 		'starlight.title': z.string(),
 		'starlight.description': z.string(),
