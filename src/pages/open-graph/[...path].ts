@@ -1,8 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { OGImageRoute } from 'astro-og-canvas';
 import { allPages } from '~/content';
-import { rtlLanguages } from '~/languages';
-import { getLangFromSlug } from '~/util/path-utils';
 import { fetchBrandFont } from './_fetchFont';
 
 type OGImageOptions = Awaited<ReturnType<Parameters<typeof OGImageRoute>[0]['getImageOptions']>>;
@@ -30,13 +28,12 @@ export const { getStaticPaths, GET } = OGImageRoute({
 	},
 
 	getImageOptions: async (_, { data, id }: (typeof pages)[string]): Promise<OGImageOptions> => {
-		const isRtl = rtlLanguages.has(getLangFromSlug(id));
 		return {
 			format: 'WEBP',
 			quality: 90,
 			title: data.title,
 			description: data.description,
-			dir: isRtl ? 'rtl' : 'ltr',
+			dir: 'ltr',
 			logo: {
 				path: './src/pages/open-graph/_images/docs-logo.png',
 				size: [300],
@@ -44,7 +41,7 @@ export const { getStaticPaths, GET } = OGImageRoute({
 			border: { width: 32, side: 'inline-start' },
 			padding: 80,
 			bgImage: {
-				path: `./src/pages/open-graph/_images/background-${isRtl ? 'rtl' : 'ltr'}.png`,
+				path: `./src/pages/open-graph/_images/background-ltr.png`,
 			},
 			font: {
 				title: {
