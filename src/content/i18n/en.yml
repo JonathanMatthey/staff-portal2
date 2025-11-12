@@ -25,9 +25,6 @@ cms.navTitle: More CMS guides
 media.navTitle: More hosted media guides
 # Migration Guides vocabulary
 migration.navTitle: More migration guides
-# `<RecipeLinks>` vocabulary
-recipesLink.singular: 'Related recipe:'
-recipesLink.plural: Related recipes
 # 404 Page
 404.title: Not Found
 404.content: This page isn’t in our solar system.

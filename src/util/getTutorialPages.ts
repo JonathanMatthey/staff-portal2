@@ -1,15 +1,12 @@
 import type { TutorialEntry } from '~/content.config';
-import { stripLangFromSlug } from '~/util/path-utils';
-import { groupPagesByLang } from './groupPagesByLang';
 
 /** Get a full list of pages for the tutorial. */
 export function getTutorialPages(allPages: TutorialEntry[], lang?: string) {
-	const pagesByLang = groupPagesByLang(allPages);
 	/** Pages */
-	const pages = pagesByLang['en']
-		.map((englishPage) => {
+	const pages = allPages
+		.map((page) => {
 			return {
-				...(englishPage as TutorialEntry),
+				...(page as TutorialEntry),
 				isFallback: false,
 			};
 		})

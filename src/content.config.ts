@@ -67,12 +67,6 @@ export const tutorialSchema = baseSchema.extend({
 	unitTitle: z.string().optional(),
 });
 
-export const recipeSchema = baseSchema.extend({
-	type: z.literal('recipe'),
-	description: z.string(),
-	altTitle: z.string().optional(),
-});
-
 export const docsCollectionSchema = z.union([
 	baseSchema,
 	backendSchema,
@@ -82,7 +76,6 @@ export const docsCollectionSchema = z.union([
 	migrationSchema,
 	tutorialSchema,
 	deploySchema,
-	recipeSchema,
 ]);
 
 const contributorSchema = z.object({
@@ -114,8 +107,6 @@ export type MigrationEntry = DocsEntry<'migration'>;
 
 export type TutorialEntry = DocsEntry<'tutorial'>;
 
-export type RecipeEntry = DocsEntry<'recipe'>;
-
 export type IntegrationCategory = z.infer<typeof integrationSchema>['category'];
 
 export const isBackendEntry = createIsDocsEntry('backend');
@@ -130,14 +121,6 @@ export const isMediaEntry = createIsDocsEntry('media');
 
 export const isMigrationEntry = createIsDocsEntry('migration');
 
-export const isRecipeEntry = createIsDocsEntry('recipe');
-
-export function createIsLangEntry(lang: string) {
-	return (entry: CollectionEntry<'docs'>): boolean => entry.id.startsWith(lang + '/');
-}
-
-export const isEnglishEntry = createIsLangEntry('en');
-export const isKoreanEntry = createIsLangEntry('ko');
 
 export const collections = {
 	docs: defineCollection({

@@ -2,7 +2,6 @@ import type { APIContext } from 'astro';
 import { defineRouteMiddleware, type StarlightRouteData } from '@astrojs/starlight/route-data';
 import { tutorialPages as pages } from '~/content';
 import { stripLangFromSlug } from '~/util/path-utils';
-import { getOgImageUrl } from '~/util/getOgImageUrl';
 import { getTutorialPages } from '~/util/getTutorialPages';
 
 export const onRequest = defineRouteMiddleware((context) => {
@@ -35,14 +34,7 @@ function updateHead(context: APIContext) {
 		}
 	}
 
-	const ogImageUrl = getOgImageUrl(context.url.pathname, !!isFallback);
-	const imageSrc = ogImageUrl ?? '/default-og-image.png';
-	const canonicalImageSrc = new URL(imageSrc, context.site);
 	const is404 = context.url.pathname.endsWith('/404/');
-
-	head.push({ tag: 'meta', attrs: { property: 'og:image', content: canonicalImageSrc.href } });
-	head.push({ tag: 'meta', attrs: { name: 'twitter:image', content: canonicalImageSrc.href } });
-	head.push({ tag: 'meta', attrs: { name: 'twitter:site', content: 'astrodotbuild' } });
 
 	// Algolia docsearch language facet
 	head.push({ tag: 'meta', attrs: { name: 'docsearch:language', content: 'en' } });

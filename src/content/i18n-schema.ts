@@ -29,9 +29,6 @@ export const AstroDocsI18nSchema = z
 		'media.navTitle': z.string(),
 		// Migration Guides vocabulary
 		'migration.navTitle': z.string(),
-		// `<RecipeLinks>` vocabulary
-		'recipesLink.singular': z.string(),
-		'recipesLink.plural': z.string(),
 		// 404 Page
 		'404.title': z.string(),
 		'404.content': z.string(),

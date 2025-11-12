@@ -6,7 +6,6 @@ import { getPageCategory } from './getPageCategory';
  */
 const categoryParents: Partial<Record<ReturnType<typeof getPageCategory>, string>> = {
 	'Error Reference': 'reference/error-reference',
-	Tutorials: 'tutorial/0-introduction',
 };
 
 /**

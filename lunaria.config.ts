@@ -11,99 +11,7 @@ export default defineConfig({
 			tag: 'en',
 		},
 	},
-	locales: [
-		{
-			label: 'العربية',
-			lang: 'ar',
-			parameters: {
-				tag: 'ar',
-			},
-		},
-		{
-			label: 'Deutsch',
-			lang: 'de',
-			parameters: {
-				tag: 'de',
-			},
-		},
-		{
-			label: 'Español',
-			lang: 'es',
-			parameters: {
-				tag: 'es',
-			},
-		},
-		{
-			label: 'Français',
-			lang: 'fr',
-			parameters: {
-				tag: 'fr',
-			},
-		},
-		{
-			label: 'हिन्दी',
-			lang: 'hi',
-			parameters: {
-				tag: 'hi',
-			},
-		},
-		{
-			label: 'Italiano',
-			lang: 'it',
-			parameters: {
-				tag: 'it',
-			},
-		},
-		{
-			label: '日本語',
-			lang: 'ja',
-			parameters: {
-				tag: 'ja',
-			},
-		},
-		{
-			label: '한국어',
-			lang: 'ko',
-			parameters: {
-				tag: 'ko',
-			},
-		},
-		{
-			label: 'Polski',
-			lang: 'pl',
-			parameters: {
-				tag: 'pl',
-			},
-		},
-		{
-			label: 'Português do Brasil',
-			lang: 'pt-br',
-			parameters: {
-				tag: 'pt-BR',
-			},
-		},
-		{
-			label: 'Русский',
-			lang: 'ru',
-			parameters: {
-				tag: 'ru',
-			},
-		},
-		{
-			label: '简体中文',
-			lang: 'zh-cn',
-			parameters: {
-				tag: 'zh-CN',
-			},
-		},
-		{
-			label: '正體中文',
-			lang: 'zh-tw',
-			parameters: {
-				tag: 'zh-TW',
-			},
-		},
-	],
+	locales: [],
 	files: [
 		{
 			include: ['src/content/i18n/en.yml'],
@@ -116,8 +24,8 @@ export default defineConfig({
 			type: 'dictionary',
 		},
 		{
-			include: ['src/content/docs/en/**/*.(md|mdx)'],
-			pattern: 'src/content/docs/@lang/@path',
+			include: ['src/content/docs/**/*.(md|mdx)'],
+			pattern: 'src/content/docs/@path',
 			type: 'universal',
 		},
 	],
