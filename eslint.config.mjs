@@ -1,13 +1,12 @@
 // @ts-check
 import eslint from '@eslint/js';
 import eslintPluginAstro from 'eslint-plugin-astro';
-import globals from 'globals';
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig([
 	{
-		ignores: ['**/dist', '**/node_modules', '**/.astro', '**/.github', '**/.changeset'],
+		ignores: ['**/dist', '**/node_modules', '**/.astro', '**/.github'],
 	},
 
 	// Global config
@@ -30,12 +29,4 @@ export default defineConfig([
 
 	// Astro
 	...eslintPluginAstro.configs.recommended,
-
-	// Set globals for Node scripts.
-	{
-		files: ['scripts/**'],
-		languageOptions: {
-			globals: globals.node,
-		},
-	},
 ]);
