@@ -11,10 +11,6 @@ export const AstroDocsI18nSchema = z
 		'footer.contribute': z.string(),
 		'footer.translatePage': z.string(),
 		'footer.sponsor': z.string(),
-		// Used in `<Since>`: Added in: v0.24.0 [NEW]
-		'since.addedIn': z.string(),
-		'since.new': z.string(),
-		'since.beta': z.string(),
 		// Installation Guide
 		'install.autoTab': z.string(),
 		'install.manualTab': z.string(),
@@ -40,21 +36,6 @@ export const AstroDocsI18nSchema = z
 		'integrations.adapters': z.string(),
 		'integrations.others': z.string(),
 		'integrations.more': z.string(),
-		// Checklist component
-		'checklist.or': z.string(),
-		// Multiple Choice component
-		'multipleChoice.defaultCorrect': z.string(),
-		'multipleChoice.defaultIncorrect': z.string(),
-		'multipleChoice.submitLabel': z.string(),
-		// Tutorial Progress
-		'progress.todo': z.string(),
-		'progress.done': z.string(),
-		// Tutorial Navigation
-		'tutorial.trackerLabel': z.string(),
-		'tutorial.unit': z.string(),
-		'tutorial.title.prefix': z.string(),
-		// Tutorial
-		'tutorial.getReady': z.string(),
 		// Code snippet vocabulary
 		'expressiveCode.terminalWindowFallbackTitle': z.string(),
 		'expressiveCode.copyButtonTooltip': z.string(),

@@ -36,21 +36,6 @@ integrations.renderers: Front-end frameworks
 integrations.adapters: Adapters
 integrations.others: Other integrations
 integrations.more: More integrations
-# Checklist component
-checklist.or: or
-# Multiple Choice component
-multipleChoice.defaultCorrect: Correct!
-multipleChoice.defaultIncorrect: Try again!
-multipleChoice.submitLabel: Submit
-# Tutorial Progress
-progress.todo: To-do
-progress.done: Complete
-# Tutorial Navigation
-tutorial.trackerLabel: Tutorial Tracker
-tutorial.unit: Unit
-tutorial.title.prefix: 'Build a blog tutorial: {{title}}'
-# Tutorial
-tutorial.getReady: Get ready to…
 # Code snippet vocabulary
 expressiveCode.terminalWindowFallbackTitle: Terminal window
 expressiveCode.copyButtonTooltip: Copy to clipboard

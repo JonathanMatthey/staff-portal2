@@ -1,38 +1,12 @@
 import type { APIContext } from 'astro';
-import { defineRouteMiddleware, type StarlightRouteData } from '@astrojs/starlight/route-data';
-import { tutorialPages as pages } from '~/content';
-import { stripLangFromSlug } from '~/util/path-utils';
-import { getTutorialPages } from '~/util/getTutorialPages';
+import { defineRouteMiddleware } from '@astrojs/starlight/route-data';
 
 export const onRequest = defineRouteMiddleware((context) => {
 	updateHead(context);
-	updateTutorialPagination(context.locals.starlightRoute);
 });
 
 function updateHead(context: APIContext) {
-	const { head, entry, isFallback, lang, entryMeta } = context.locals.starlightRoute;
-
-	const title = head.find((item) => item.tag === 'title');
-	const frontmatterTitle = entry.data.head.find((item) => item.tag === 'title');
-
-	// Update the title of tutorial entry which do not provide a custom title in their frontmatter.
-	if (isTutorialEntry(entry) && title && !frontmatterTitle) {
-		// Check if a prefix translation exists for the page content language, without any possible
-		// fallback.
-		const isPrefixTranslated = context.locals.t.exists('tutorial.title.prefix', {
-			lngs: [entryMeta.lang],
-		});
-
-		if (isPrefixTranslated) {
-			// If a prefix translation exists, use it to format the title.
-			title.content = context.locals.t('tutorial.title.prefix', {
-				title: title.content,
-				// Explicitly use the language based on the page content, which can be different from the
-				// page language for fallback pages.
-				lngs: [entryMeta.lang],
-			});
-		}
-	}
+	const { head } = context.locals.starlightRoute;
 
 	const is404 = context.url.pathname.endsWith('/404/');
 
@@ -49,43 +23,4 @@ function updateHead(context: APIContext) {
 			defer: true,
 		},
 	});
-}
-
-function updateTutorialPagination(starlightRoute: StarlightRouteData) {
-	const { entry, pagination } = starlightRoute;
-
-	if (!isTutorialEntry(entry)) return;
-
-	const tutorialPages = getTutorialPages(pages, undefined);
-	const i = tutorialPages.findIndex((p) => p.id === entry.id);
-
-	if (tutorialPages[i - 1]) {
-		const prevPage = tutorialPages[i - 1];
-
-		pagination.prev = {
-			href: `/${stripLangFromSlug(prevPage.id)}/`,
-			isCurrent: false,
-			label: prevPage.data.title,
-			type: 'link',
-			badge: undefined,
-			attrs: {},
-		};
-	}
-
-	if (tutorialPages[i + 1]) {
-		const nextPage = tutorialPages[i + 1];
-
-		pagination.next = {
-			href: `/${stripLangFromSlug(nextPage.id)}/`,
-			isCurrent: false,
-			label: nextPage.data.title,
-			type: 'link',
-			badge: undefined,
-			attrs: {},
-		};
-	}
-}
-
-function isTutorialEntry(entry: StarlightRouteData['entry']) {
-	return entry.id.split('/')[1] === 'tutorial';
 }

@@ -62,11 +62,6 @@ export const migrationSchema = baseSchema.extend({
 	stub: z.boolean().default(false),
 });
 
-export const tutorialSchema = baseSchema.extend({
-	type: z.literal('tutorial'),
-	unitTitle: z.string().optional(),
-});
-
 export const docsCollectionSchema = z.union([
 	baseSchema,
 	backendSchema,
@@ -74,14 +69,8 @@ export const docsCollectionSchema = z.union([
 	integrationSchema,
 	mediaSchema,
 	migrationSchema,
-	tutorialSchema,
 	deploySchema,
 ]);
-
-const contributorSchema = z.object({
-	id: z.number(),
-	login: z.string(),
-});
 
 export type DocsEntryData = z.infer<typeof docsCollectionSchema>;
 
@@ -104,8 +93,6 @@ export type CmsEntry = DocsEntry<'cms'>;
 export type IntegrationEntry = DocsEntry<'integration'>;
 
 export type MigrationEntry = DocsEntry<'migration'>;
-
-export type TutorialEntry = DocsEntry<'tutorial'>;
 
 export type IntegrationCategory = z.infer<typeof integrationSchema>['category'];
 

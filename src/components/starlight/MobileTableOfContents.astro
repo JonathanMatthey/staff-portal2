@@ -1,11 +1,8 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
 import TableOfContentsList from '../../../node_modules/@astrojs/starlight/components/TableOfContents/TableOfContentsList.astro';
-import TutorialNav from '../tutorial/TutorialNav.astro';
 
-const { entry, toc } = Astro.locals.starlightRoute;
-
-const isTutorial = entry.id.split('/')[1] === 'tutorial';
+const { toc } = Astro.locals.starlightRoute;
 ---
 
 {
@@ -15,19 +12,13 @@ const isTutorial = entry.id.split('/')[1] === 'tutorial';
 				<details id="starlight__mobile-toc">
 					<summary id="starlight__on-this-page--mobile" class="sl-flex">
 						<div class="toggle sl-flex">
-							{isTutorial
-								? Astro.locals.t('tutorial.trackerLabel')
-								: Astro.locals.t('tableOfContents.onThisPage')}
+							{Astro.locals.t('tableOfContents.onThisPage')}
 							<Icon name={'right-caret'} class="caret" size="1rem" />
 						</div>
 						<span class="display-current" />
 					</summary>
 					<div class="dropdown">
-						{isTutorial ? (
-							<TutorialNav id="mobile" />
-						) : (
-							<TableOfContentsList toc={toc.items} isMobile />
-						)}
+						<TableOfContentsList toc={toc.items} isMobile />
 					</div>
 				</details>
 			</nav>
