@@ -2,17 +2,15 @@ import type { TutorialEntry } from '~/content.config';
 import { stripLangFromSlug } from '~/util/path-utils';
 import { groupPagesByLang } from './groupPagesByLang';
 
-/** Get a full list of pages for the tutorial in the current language, falling back to English if not available. */
-export function getTutorialPages(allPages: TutorialEntry[], lang: string) {
+/** Get a full list of pages for the tutorial. */
+export function getTutorialPages(allPages: TutorialEntry[], lang?: string) {
 	const pagesByLang = groupPagesByLang(allPages);
 	/** Pages */
 	const pages = pagesByLang['en']
 		.map((englishPage) => {
-			const enSlug = stripLangFromSlug(englishPage.id);
-			const langPage = pagesByLang[lang]?.find((page) => stripLangFromSlug(page.id) === enSlug);
 			return {
-				...((langPage as TutorialEntry) || (englishPage as TutorialEntry)),
-				isFallback: !langPage,
+				...(englishPage as TutorialEntry),
+				isFallback: false,
 			};
 		})
 		.sort((a, b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0));

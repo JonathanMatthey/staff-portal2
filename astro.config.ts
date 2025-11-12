@@ -6,11 +6,9 @@ import remarkSmartypants from 'remark-smartypants';
 import { sidebar } from './astro.sidebar';
 import { devServerFileWatcher } from './config/integrations/dev-server-file-watcher';
 import { sitemap } from './config/integrations/sitemap';
-import { localesConfig } from './config/locales';
 import { starlightPluginLlmsTxt } from './config/plugins/llms-txt';
 import { starlightPluginSmokeTest } from './config/plugins/smoke-test';
 import { rehypeTasklistEnhancer } from './config/plugins/rehype-tasklist-enhancer';
-import { remarkFallbackLang } from './config/plugins/remark-fallback-lang';
 
 /* https://docs.netlify.com/configure-builds/environment-variables/#read-only-variables */
 const NETLIFY_PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
@@ -46,8 +44,6 @@ export default defineConfig({
 				PageTitle: './src/components/starlight/PageTitle.astro',
 			},
 			routeMiddleware: './src/routeData.ts',
-			defaultLocale: 'en',
-			locales: localesConfig,
 			sidebar,
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/interledger' },
@@ -76,10 +72,8 @@ export default defineConfig({
 		// Override with our own config
 		smartypants: false,
 		remarkPlugins: [
-			// @ts-expect-error — `remark-smartypants` type is not matching Astro’s for some reason even though they both use unified’s `Plugin` type
+			// @ts-expect-error — `remark-smartypants` type is not matching Astro's for some reason even though they both use unified's `Plugin` type
 			[remarkSmartypants, { dashes: false }],
-			// Add our custom plugin that marks links to fallback language pages
-			remarkFallbackLang(),
 		],
 		rehypePlugins: [
 			rehypeSlug,

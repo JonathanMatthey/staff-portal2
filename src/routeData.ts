@@ -45,7 +45,7 @@ function updateHead(context: APIContext) {
 	head.push({ tag: 'meta', attrs: { name: 'twitter:site', content: 'astrodotbuild' } });
 
 	// Algolia docsearch language facet
-	head.push({ tag: 'meta', attrs: { name: 'docsearch:language', content: lang } });
+	head.push({ tag: 'meta', attrs: { name: 'docsearch:language', content: 'en' } });
 
 	// Fathom analytics
 	head.push({
@@ -60,18 +60,18 @@ function updateHead(context: APIContext) {
 }
 
 function updateTutorialPagination(starlightRoute: StarlightRouteData) {
-	const { entry, locale, pagination } = starlightRoute;
+	const { entry, pagination } = starlightRoute;
 
 	if (!isTutorialEntry(entry)) return;
 
-	const tutorialPages = getTutorialPages(pages, locale!);
+	const tutorialPages = getTutorialPages(pages, undefined);
 	const i = tutorialPages.findIndex((p) => p.id === entry.id);
 
 	if (tutorialPages[i - 1]) {
 		const prevPage = tutorialPages[i - 1];
 
 		pagination.prev = {
-			href: `/${locale}/${stripLangFromSlug(prevPage.id)}/`,
+			href: `/${stripLangFromSlug(prevPage.id)}/`,
 			isCurrent: false,
 			label: prevPage.data.title,
 			type: 'link',
@@ -84,7 +84,7 @@ function updateTutorialPagination(starlightRoute: StarlightRouteData) {
 		const nextPage = tutorialPages[i + 1];
 
 		pagination.next = {
-			href: `/${locale}/${stripLangFromSlug(nextPage.id)}/`,
+			href: `/${stripLangFromSlug(nextPage.id)}/`,
 			isCurrent: false,
 			label: nextPage.data.title,
 			type: 'link',

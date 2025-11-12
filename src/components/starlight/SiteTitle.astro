@@ -1,20 +1,31 @@
 ---
 import logo from '~/assets/interledger-logo.svg?raw';
 
-const main = 'https://interledger.org/';
-const self = '/' + (Astro.locals.starlightRoute.locale || 'en') + '/getting-started/';
+const main = 'https://interledger.me/';
 ---
 
 <span class="site-title sl-flex">
-	<a class="astro-logo" href={main} set:html={logo} aria-label="Interledger Foundation" />
+	<a class="astro-logo" href={main} aria-label="Interledger Foundation">
+		<span set:html={logo} />
+		<span class="site-subtitle">Staff Portal</span>
+	</a>
 </span>
 
 <style>
 	.site-title {
 		gap: 1rem;
+		align-items: center;
 	}
 	.site-title a {
 		display: flex;
+		align-items: center;
+		text-decoration: none;
+		gap: 0.75rem;
+	}
+	.site-subtitle {
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-sm);
+		font-weight: 700;
 	}
 	.astro-logo {
 		color: var(--sl-color-white);
