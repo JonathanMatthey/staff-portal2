@@ -67,7 +67,6 @@ export const AstroDocsI18nSchema = z
 		// Starlight banner
 		'starlight.title': z.string(),
 		'starlight.description': z.string(),
-		// `<StudioHeading>` component
 		'studioHeading.label': z.string(),
 		// Upgrade guide
 		'upgrade.implementationPR': z.string(),

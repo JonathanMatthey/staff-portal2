@@ -51,7 +51,7 @@ type ProgressState = Record<string, PageState>;
  *    - `<Checklist>` components will also _ask_ for any previously stored state
  *      at this point and use it to mark items as checked if appropriate.
  *
- *    - `<Progress>` and `<UnitProgressIcon>` will similarly check in to see if
+ *    - `<Progress>` will similarly check in to see if
  *      they should be showing as complete or not. They use a slug they receive as a
  *      prop to know which bit of state to ask for.
  *
