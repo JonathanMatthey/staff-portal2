@@ -62,6 +62,7 @@ export default defineConfig({
 			],
 			disable404Route: true,
 			plugins: [starlightPluginSmokeTest(), starlightPluginLlmsTxt()],
+			customCss: ['./src/styles/global.css'],
 		}),
 		sitemap(),
 	],
