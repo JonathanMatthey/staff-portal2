@@ -1,7 +1,6 @@
 import { docsLoader, i18nLoader } from '@astrojs/starlight/loaders';
 import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 import { defineCollection, z, type CollectionEntry } from 'astro:content';
-import { file } from 'astro/loaders';
 import { AstroDocsI18nSchema } from './content/i18n-schema';
 
 export const baseSchema = z.object({
@@ -102,8 +101,6 @@ export const isCmsEntry = createIsDocsEntry('cms');
 
 export const isIntegrationEntry = createIsDocsEntry('integration');
 
-export const isTutorialEntry = createIsDocsEntry('tutorial');
-
 export const isMediaEntry = createIsDocsEntry('media');
 
 export const isMigrationEntry = createIsDocsEntry('migration');
@@ -117,10 +114,5 @@ export const collections = {
 	i18n: defineCollection({
 		loader: i18nLoader(),
 		schema: i18nSchema({ extend: AstroDocsI18nSchema }),
-	}),
-	// Contributors to the docs repo, updated weekly, sorted number of commits in descending order.
-	contributors: defineCollection({
-		loader: file('src/data/contributors.json'),
-		schema: contributorSchema,
 	}),
 };
