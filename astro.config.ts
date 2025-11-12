@@ -50,8 +50,7 @@ export default defineConfig({
 			locales: localesConfig,
 			sidebar,
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/astro' },
-				{ icon: 'discord', label: 'Discord', href: 'https://astro.build/chat' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/interledger' },
 			],
 			pagefind: false,
 			head: [

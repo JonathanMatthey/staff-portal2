@@ -5,13 +5,11 @@ description: Welcome to the Interledger Foundation Staff Portal
 
 import { CardGrid, Card } from '@astrojs/starlight/components';
 
-##### Welcome to the Interledger Staff Portal. 
+##### Welcome to the Interledger Staff Portal.
 
 This is where you can familiarise yourself with the Interledger Foundation, from what we do to how we work, as well as access our various brand assets.
 
-<div class="ernie">
-![Ernie holding an envelope in her beak](/assets/img/ernie.svg)
-</div>
+<div class="ernie">![Ernie holding an envelope in her beak](/assets/img/ernie.svg)</div>
 
 Our aim is to increase access to digital financial services for the 1.4 billion people worldwide who are currently excluded from traditional banking systems. We do this by making it easier to send money to anyone, anywhere. When payments are powered by Interledger, transactions are not limited to a particular bank, mobile money provider, or location.
 
@@ -20,6 +18,7 @@ Our aim is to increase access to digital financial services for the 1.4 billion 
 Interledger Foundation is the overarching brand that acts as a "container" for all the work we do. Underneath the Foundation are 4 brand pillars which are:
 
 <div class="brand-pillars">
+<div>
 
 ### Our vision
 
@@ -27,11 +26,19 @@ Interledger Foundation is the overarching brand that acts as a "container" for a
 
 The primary color for vision is purple, which is used for the Communications team to inspire people about our work. Read our [vision page](/pillars/vision) for more details.
 
+  </div>
+
+  <div style="margin-top: 0">
+
 ### Our mission
 
 **Build equity and inclusion within Interledger, the interoperable global payments network.**
 
 The primary color for mission is orange, which is used for the Programs team to show what we are working on now. Read our [mission page](/pillars/mission) for more details.
+
+  </div>
+
+  <div>
 
 ### Our technology
 
@@ -39,12 +46,17 @@ The primary color for mission is orange, which is used for the Programs team to 
 
 The primary color for technology is teal, which is used for the Technology team to promote our Open Standards and technology. Read our [technology page](/pillars/technology) for more details.
 
+  </div>
+
+  <div>
+
 ### Our values
 
 **Be open, inclusive, and innovative.**
 
 The primary color for values is pink, which is used for the HR and Operations team to show how we work. Read our [values page](/pillars/values) for more details.
 
+  </div>
 </div>
 
 ## How we use our brand pillars
@@ -65,11 +77,13 @@ It is not department or person specific but speaks to the organizational structu
     Learn about the history and evolution of the Interledger Foundation.
 
     [Read more →](/en/team-info/history-of-ilf/)
+
   </Card>
   <Card title="Meet the team" icon="users">
     Get to know the people behind the Interledger Foundation.
 
     [Read more →](/en/team-info/overview/)
+
   </Card>
 </CardGrid>
 
@@ -80,16 +94,19 @@ It is not department or person specific but speaks to the organizational structu
     Access official Interledger Foundation logos and brand guidelines.
 
     [View logos →](/en/resources/logos/)
+
   </Card>
   <Card title="Presentation templates" icon="document">
     Download presentation templates and brand assets.
 
     [View assets →](/en/resources/assets/)
+
   </Card>
   <Card title="Explainers (coming soon)" icon="information">
     Explanatory materials about Interledger.
 
     Coming soon
+
   </Card>
 </CardGrid>
 
@@ -112,12 +129,18 @@ It is not department or person specific but speaks to the organizational structu
 
   .brand-pillars {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin: 2rem 0;
   }
 
+  .brand-pillars > div {
+    display: flex;
+    flex-direction: column;
+  }
+
   .brand-pillars h3 {
-    margin-top: 1.5rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
   }
 
@@ -126,6 +149,10 @@ It is not department or person specific but speaks to the organizational structu
       float: none;
       margin: 1rem auto;
       text-align: center;
+    }
+
+    .brand-pillars {
+      grid-template-columns: 1fr;
     }
   }
 `}</style>

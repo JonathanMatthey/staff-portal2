@@ -7,6 +7,8 @@ interface Props {
 	variant: 'primary' | 'secondary' | 'minimal';
 	link: string;
 	icon?: undefined | { type: 'icon'; name: IconName } | { type: 'raw'; html: string };
+	target?: string;
+	rel?: string;
 }
 
 const propsSchema = z.object({
@@ -18,12 +20,14 @@ const propsSchema = z.object({
 			z.object({ type: z.literal('raw'), html: z.string() }),
 		])
 		.optional(),
+	target: z.string().optional(),
+	rel: z.string().optional(),
 });
 
-const { link, variant, icon } = propsSchema.parse(Astro.props);
+const { link, variant, icon, target, rel } = propsSchema.parse(Astro.props);
 ---
 
-<a class:list={['sl-flex action', variant]} href={link}>
+<a class:list={['sl-flex action', variant]} href={link} target={target} rel={rel}>
 	<slot />
 	{icon?.type === 'icon' && <Icon name={icon.name} size="1.5em" />}
 	{icon?.type === 'raw' && <Fragment set:html={icon.html} />}
@@ -31,6 +35,7 @@ const { link, variant, icon } = propsSchema.parse(Astro.props);
 
 <style>
 	.action {
+		display: inline-flex;
 		gap: 0.5em;
 		align-items: center;
 		border-radius: 999rem;

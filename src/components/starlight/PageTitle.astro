@@ -4,6 +4,11 @@ import Default from '@astrojs/starlight/components/PageTitle.astro';
 import Version from '../Version.astro';
 
 const { data } = Astro.locals.starlightRoute.entry;
+const subtitle = data.subtitle;
+
+// Debug logging
+console.log('Page data:', data);
+console.log('Subtitle:', subtitle);
 ---
 
 {
@@ -30,6 +35,13 @@ const { data } = Astro.locals.starlightRoute.entry;
 					<Icon size="1rem" name="list-format" /> {Astro.locals.t('integrations.changelog')}
 				</a>
 			</div>
+		</div>
+	) : subtitle ? (
+		<div class="page-title-with-subtitle">
+			<Default>
+				<slot />
+			</Default>
+			<p class="subtitle">{subtitle}</p>
 		</div>
 	) : (
 		<Default>
@@ -75,5 +87,17 @@ const { data } = Astro.locals.starlightRoute.entry;
 	}
 	.integration-metadata svg {
 		width: 1.5rem;
+	}
+	.page-title-with-subtitle {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.subtitle {
+		margin: 0;
+		font-size: var(--sl-text-xl);
+		font-weight: 400;
+		color: var(--sl-color-gray-2);
+		line-height: var(--sl-line-height-headings);
 	}
 </style>

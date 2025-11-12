@@ -1,12 +1,12 @@
 ---
 import logo from '~/assets/interledger-logo.svg?raw';
 
-const main = 'https://astro.build/';
+const main = 'https://interledger.org/';
 const self = '/' + (Astro.locals.starlightRoute.locale || 'en') + '/getting-started/';
 ---
 
 <span class="site-title sl-flex">
-	<a class="astro-logo" href={main} set:html={logo} aria-label="Astro" />
+	<a class="astro-logo" href={main} set:html={logo} aria-label="Interledger Foundation" />
 </span>
 
 <style>
@@ -35,14 +35,14 @@ const self = '/' + (Astro.locals.starlightRoute.locale || 'en') + '/getting-star
 	/* Adjust svg sizes to full nav height */
 	.site-title :global(svg) {
 		--display-height: 1.75rem;
-		/* `auto` ensures the `<svg>` scales down on really narrow viewports */
+		/* Set height and let width scale proportionally */
+		height: var(--display-height);
 		width: auto;
-		height: auto;
 		margin-block: calc((var(--sl-nav-height) - var(--display-height)) / 2);
-		transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+		display: block;
 	}
-	.site-title a:hover :global(svg) {
-		--hover-offset: 0.15rem;
-		transform: translateY(calc(var(--hover-offset) * -1));
+	/* Make the black text part of the logo visible on dark backgrounds */
+	.site-title :global(svg path[fill="#000"]) {
+		fill: var(--sl-color-white);
 	}
 </style>

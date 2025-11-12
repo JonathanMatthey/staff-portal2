@@ -3,11 +3,11 @@ title: Notice Board
 description: Announcements and important notices for Interledger Foundation staff
 ---
 
+import Button from '~/components/Button.astro';
+
 Welcome to the ILF notice board. Here's the place to see the latest Interledger Foundation updates at a glance. The key here is "at a glance", so make sure the gist is clear within 400 characters and below. Also, indicate what pillar (vision, mission, values or tech) the notice falls under, otherwise, "general" is also an option. The board layout really wouldn't work with anything longer than 400 characters, to be honest.
 
-<div class="highlight">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-FJEFBnU42bDjYfkFIfRqB6P_XMPG1bLuuj3MJM429wLImQ/viewform" target="_blank" rel="noopener noreferrer">Submit new post</a>
-</div>
+<Button variant="primary" link="https://docs.google.com/forms/d/e/1FAIpQLSc-FJEFBnU42bDjYfkFIfRqB6P_XMPG1bLuuj3MJM429wLImQ/viewform" target="_blank" rel="noopener noreferrer">Submit new post</Button>
 
 ## Recent Notices
 
@@ -42,29 +42,3 @@ Watch the [instructions from Travel Perk](https://zoom.us/rec/play/dQ9gfOsbr8jLS
 Links: [Venue](https://ccconferencecentre.co.za/) & [Accommodation](https://ccconferencecentre.co.za/accommodation/)
 
 *\*Hotel accommodations have already been made*
-
-<style>{`
-  .highlight {
-    background-color: var(--sl-color-accent-low);
-    border: 1px solid var(--sl-color-accent);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin: 2rem 0;
-    text-align: center;
-  }
-
-  .highlight a {
-    display: inline-block;
-    background-color: var(--sl-color-accent);
-    color: var(--sl-color-white);
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: opacity 0.2s;
-  }
-
-  .highlight a:hover {
-    opacity: 0.9;
-  }
-`}</style>

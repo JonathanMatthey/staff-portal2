@@ -3,72 +3,80 @@ title: Glossary
 description: Glossary of terms related to Interledger and the foundation
 ---
 
-# Glossary
+import { Aside } from '@astrojs/starlight/components';
 
-A comprehensive glossary of terms related to Interledger Protocol, blockchain, and the Interledger Foundation.
+<Aside type="caution">
+  We are still gathering content for this page.
+</Aside>
 
-## Interledger Terms
+Within the Interledger Foundation, there are a number of terms that are regularly used. For the sake of consistency and to ensure we are all on the same page, the following is a list of terms and what they refer to when used in the context of Interledger. If there is a term that you have come across which is not on the list, please add it to our [working Glossary spreadsheet](https://docs.google.com/spreadsheets/d/1Gs3URtKBf07njXmE15R3flkBnCK6KiYlMr4ss1XiLIE/edit?usp=sharing).
 
-### Interledger Protocol (ILP)
-An open protocol suite for sending payments across different ledgers and payment networks.
+## Terms
 
-### Connector
-A node in the Interledger network that routes payments between different ledgers.
+**Account servicing entity (ASE)**
+An entity that provides and maintains payment accounts for payers and payees. ASEs that maintain financial accounts are regulated entities within the countries they operate. Examples include digital wallet providers, banks, crypto wallets, and mobile money providers.
 
-### Payment Pointer
-A standardized identifier for payment accounts, similar to an email address for payments.
+**Asset**
+An Asset consists of two pieces of information, code and scale. The asset code SHOULD be an ISO 4217 currency code. The asset scale is the difference in orders of magnitude between the standard unit and a corresponding fractional unit.
 
-### STREAM Protocol
-A transport protocol for Interledger that provides for sending multiple packets of money and data over ILP.
+**Closed network**
+_Definition pending_
 
-### Web Monetization
-A proposed API standard that allows websites to request small payments from users automatically.
+**Data normalization**
+_Definition pending_
 
-## Payment & Blockchain Terms
+**Fiat currency**
+_Definition pending_
 
-### Ledger
-A record-keeping system for financial transactions.
+**Grant Negotiation Authorization Protocol (GNAP)**
+The Grant Negotiation Authorization Protocol (GNAP) defines a mechanism for delegating authorization to a piece of software, and conveying the results and artifacts of that delegation to the software. This delegation can include access to a set of APIs as well as subject information passed directly to the software. For more information, see the specification.
 
-### Settlement
-The completion of a transaction where assets are transferred from one party to another.
+**Interledger Protocol**
+Interledger is a protocol for sending packets of money across different payment networks or ledgers. For more details, see the specification.
 
-### Liquidity
-The availability of liquid assets or cash that can be used for transactions.
+**Interoperability**
+_Definition pending_
 
-### Atomic Transaction
-A transaction that either completes entirely or not at all.
+**Ledger**
+_Definition pending_
 
-## Technical Terms
+**Micro payments**
+_Definition pending_
 
-### API (Application Programming Interface)
-A set of protocols and tools for building software applications.
+**Open Payments (OP)**
+Open Payments is a specification and set of APIs that define standards for access to digital payment accounts.
 
-### Open Source
-Software with source code that anyone can inspect, modify, and enhance.
+When an ASE implements Open Payments on its customers' accounts, third-party applications and other entities can initiate payments from their users' payment accounts (with permission).
 
-### SDK (Software Development Kit)
-A collection of software development tools in one installable package.
+Open Payments-enabled accounts are assigned one or more wallet addresses. Wallet addresses are a required component of Web Monetization.
 
-### Webhook
-A method for applications to provide real-time information to other applications.
+**Open protocol**
+_Definition pending_
 
-## Foundation Terms
+**Open source**
+_Definition pending_
 
-### Grant Program
-Funding opportunities provided by the foundation to support ecosystem development.
+**Payment pointer**
+A payment pointer is a type of Open Payments wallet address that supports Interledger payments. Payment pointer addresses begin with $ instead of https://. For example, $wallet.example.com/alice.
 
-### Community Grant
-Funding provided to community members for projects that benefit the Interledger ecosystem.
+Each payment pointer resolves to a URL with the HTTPS scheme. Because the href value in a monetization `<link>` must be a URL, you must convert a payment pointer to its URL equivalent. Enter your payment pointer into the field provided on paymentpointers.org to get the URL.
 
-### Ambassador Program
-A program that empowers community members to represent and promote Interledger.
+**Peer**
+A Peer is a counterparty that a given party transacts with. Within the Interledger Protocol, connectors maintain peers, or counterparty connectors whom they transact with. For more information, see the peering documentation.
 
-## Contributing to the Glossary
+**Simple Payments Setup Protocol (SPSP)**
+The Simple Payments Setup Protocol is a basic protocol for exchanging payment information between payee and payer to facilitate payment over Interledger. For more details, see the SPSP specification.
 
-If you have suggestions for additional terms or corrections, please contact the Ops Team or submit a contribution.
+**STREAM**
+STREAM is a multiplexed Interledger Transport Protocol that provides for sending multiple "streams" of money and data between two parties using ILP. For more details, see the STREAM specification.
 
-## Additional Resources
+**TigerBeetle**
+TigerBeetle is a distributed financial accounting database designed for mission critical safety and performance. For more information, see the official website.
 
-- [Interledger RFCs](https://interledger.org/rfcs/)
-- [Developer Documentation](https://interledger.org/developers/)
-- Technical Specifications (coming soon)
+**User agent**
+A user agent is a computer program representing or acting on behalf of a person. A web browser is a common example of a user agent.
+
+**Wallet address**
+A wallet address is a secure, unique URL that represents an Open Payments-enabled account. Each wallet address provides an entry point to the Open Payments APIs, allowing the site visitor's software to get the details it needs to set up a payment.
+
+Similar to how an email address is a publicly shareable ID for an email account, a wallet address is a publicly shareable payment address for the underlying account. Knowing someone's wallet address in no way allows unauthorized access to, or payments from, the account itself.
